@@ -49,17 +49,19 @@ class rv_curve_class:
         #Note how when we call the true_anomaly method, we do not need to give any input parameter
         #All the parameters are attributes of the instance, so they are used in the method computationscre
         nu = self.true_anomaly()                         # get true anomaly from true_anomaly function
-        rv = self.k * np.cos(nu + self.w) + self.e * np.cos(self.w)  # compute RV curve
-        return self.t_vector, rv
+        self.rv = self.k * np.cos(nu + self.w) + self.e * np.cos(self.w)  # compute RV curve
+        
+    #Let's create a new method to plot the light curve
+    def plot(self):  
+        #Let us compute the curve
+        self.rv_curve()
+        # plot the RV curve
+        plt.plot(self.t_vector, self.rv)
+        plt.xlabel("Time [d]")
+        plt.ylabel("RV [m/s]")
+        plt.show()
     
 # create instance of the class
 rv = rv_curve_class(t0=0., p=8000., e=0.5, w=np.pi/3, k=500., t_init=0., t_end=10000.)
 
-# compute the RV curve
-t, rv = rv.rv_curve()
-
-# plot the RV curve
-plt.plot(t, rv)
-plt.xlabel("Time [d]")
-plt.ylabel("RV [m/s]")
-plt.show()
+rv.plot()
