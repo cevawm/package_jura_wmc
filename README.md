@@ -1,8 +1,12 @@
-#rv_curve_jura package
+####rv_curve_jura package
 
-##EXAMPLE FROM JURA IV: A NEW HOPE
+####EXAMPLE FROM JURA IV: A NEW HOPE
 
 This package allows you to create a radial velcoity plot of a star orbited by a planet.
+
+####more stuff
+
+added more stuff
 
 #### Usage instructions
 
