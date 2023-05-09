@@ -60,8 +60,3 @@ class rv_curve_class:
         plt.xlabel("Time [d]")
         plt.ylabel("RV [m/s]")
         plt.show()
-    
-# create instance of the class
-rv = rv_curve_class(t0=0., p=8000., e=0.5, w=np.pi/3, k=500., t_init=0., t_end=10000.)
-
-rv.plot()
